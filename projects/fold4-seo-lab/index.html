@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fold4 SEO Monitor</title>
+  <meta
+    name="description"
+    content="Dashboard ringan untuk monitoring SEO dan aset website dari Samsung Galaxy Z Fold4"
+  >
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">FOLD4 WORKSPACE</p>
+      <h1>SEO Monitor</h1>
+    </div>
+    <span class="badge">LOCAL</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="muted">Dashboard coding dan monitoring aset website.</p>
+      <button id="testButton" type="button">Test JavaScript</button>
+      <p id="result" class="result"></p>
+    </section>
+
+    <section class="stats">
+      <article class="card">
+        <span class="label">Aset dipantau</span>
+        <strong id="assetCount">3</strong>
+      </article>
+
+      <article class="card">
+        <span class="label">Status aktif</span>
+        <strong class="green">2</strong>
+      </article>
+
+      <article class="card">
+        <span class="label">Perlu dicek</span>
+        <strong class="yellow">1</strong>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>Daftar aset</h2>
+        <span class="muted">Mode lokal</span>
+      </div>
+
+      <div class="asset-list">
+        <div class="asset">
+          <div>
+            <strong>Website utama</strong>
+            <small>https://example.com</small>
+          </div>
+          <span class="status online">ONLINE</span>
+        </div>
+
+        <div class="asset">
+          <div>
+            <strong>API production</strong>
+            <small>https://api.example.com/health</small>
+          </div>
+          <span class="status online">ONLINE</span>
+        </div>
+
+        <div class="asset">
+          <div>
+            <strong>Staging server</strong>
+            <small>https://staging.example.com</small>
+          </div>
+          <span class="status warning">CHECK</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card seo-links">
+      <div class="section-title">
+        <h2>SEO quick links</h2>
+      </div>
+
+      <div class="links">
+        <a href="robots.txt" target="_blank">Robots.txt</a>
+        <a href="sitemap.xml" target="_blank">Sitemap.xml</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Fold4 SEO Lab · Local development</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
