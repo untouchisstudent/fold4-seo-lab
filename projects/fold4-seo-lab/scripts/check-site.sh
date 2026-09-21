@@ -48,6 +48,15 @@ curl -L -sS --max-time 20 "$URL" \
   | head -n 1
 
 echo
+echo "[H1]"
+H1_COUNT=$(curl -L -sS --max-time 20 "$URL" \
+  | grep -ioE '<h1[^>]*>[^<]*</h1>' \
+  | wc -l \
+  | tr -d ' ')
+
+echo "Jumlah H1: $H1_COUNT"
+
+echo
 echo "[ROBOTS]"
 ROBOTS_URL="${URL%/}/robots.txt"
 ROBOTS_STATUS=$(curl -L -sS -o /dev/null -w "%{http_code}" \
