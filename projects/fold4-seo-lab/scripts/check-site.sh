@@ -82,6 +82,15 @@ ANCHOR_LINKS=$(curl -L -sS --max-time 20 "$URL" \
 echo "Jumlah link anchor: $ANCHOR_LINKS"
 
 echo
+echo "[STRUCTURED DATA]"
+SCHEMA_COUNT=$(curl -L -sS --max-time 20 "$URL" \
+  | grep -io 'application/ld+json' \
+  | wc -l \
+  | tr -d ' ')
+
+echo "Jumlah JSON-LD: $SCHEMA_COUNT"
+
+echo
 echo "[ROBOTS]"
 ROBOTS_URL="${URL%/}/robots.txt"
 ROBOTS_STATUS=$(curl -L -sS -o /dev/null -w "%{http_code}" \
