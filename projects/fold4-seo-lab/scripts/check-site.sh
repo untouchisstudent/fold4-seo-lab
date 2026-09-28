@@ -57,6 +57,20 @@ H1_COUNT=$(curl -L -sS --max-time 20 "$URL" \
 echo "Jumlah H1: $H1_COUNT"
 
 echo
+echo "[CANONICAL]"
+CANONICAL=$(curl -L -sS --max-time 20 "$URL" \
+  | tr '
+' ' ' \
+  | grep -ioE '<link[^>]+rel=["'"'"']canonical["'"'"'][^>]*>' \
+  | head -n 1)
+
+if [ -n "$CANONICAL" ]; then
+  echo "$CANONICAL"
+else
+  echo "Canonical tidak ditemukan"
+fi
+
+echo
 echo "[ROBOTS]"
 ROBOTS_URL="${URL%/}/robots.txt"
 ROBOTS_STATUS=$(curl -L -sS -o /dev/null -w "%{http_code}" \
