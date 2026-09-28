@@ -71,6 +71,17 @@ else
 fi
 
 echo
+echo "[ANCHOR LINKS]"
+ANCHOR_LINKS=$(curl -L -sS --max-time 20 "$URL" \
+  | tr '
+' ' ' \
+  | grep -oE '<a[^>]+href=["'"'"'][^"'"'"']+["'"'"']' \
+  | wc -l \
+  | tr -d ' ')
+
+echo "Jumlah link anchor: $ANCHOR_LINKS"
+
+echo
 echo "[ROBOTS]"
 ROBOTS_URL="${URL%/}/robots.txt"
 ROBOTS_STATUS=$(curl -L -sS -o /dev/null -w "%{http_code}" \
